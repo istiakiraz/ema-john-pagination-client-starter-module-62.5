@@ -107,18 +107,29 @@ const Shop = () => {
                 </Cart>
             </div>
             <div className='pagination' >
+                <button onClick={()=> {
+                    if(currentPage>0){
+                    setCurrentPage(currentPage-1)
+                }
+                } } >Prev</button>
                 {
                     pages.map(page => <button
                         className={currentPage === page && "selected"}
                         onClick={() => setCurrentPage(page)}
                         key={page} >{page}</button> )
                 }
+                <button onClick={()=>{
+                    if(currentPage< pages.length -1 ){
+                        setCurrentPage(currentPage+1)
+                    }
+                }} >Next</button>
                 <select value={itemsPerPage} onChange={handleItemsPerPage} name="" id="">
                     <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="50">50</option>
                     <option value="5">5</option>
                 </select>
+
             </div>
         </div>
     );
