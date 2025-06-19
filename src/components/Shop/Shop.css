@@ -37,7 +37,7 @@
 }
 
 .pagination button:hover{
-    background-color: aqua;
+    background-color: orange;
 }
 
 .pagination .selected{
